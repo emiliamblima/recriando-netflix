@@ -112,9 +112,13 @@ header nav a:hover{
 
     }
 
-    .carrosel-filmes{
-        margin-top: 5px;
+    .container-carrossel{
+        margin-top: 10px;
+        margin-left: 20px;  
+      
     }
+
+    
 
     
 
