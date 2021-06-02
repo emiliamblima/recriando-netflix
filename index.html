@@ -4,14 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/main.css">
-
+    
     <!-- responsividade -->
     <link rel="stylesheet" href="style/responsive.css">
-
+    
     <!--owl css-->
     <link rel="stylesheet" href="style/owl/owl.carousel.min.css">
     <link rel="stylesheet" href="style/owl/owl.theme.default.min.css">
+    
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <script src="bootstrap/bootstrap.min.js"></script>
+    
+    
+    
+    <link rel="stylesheet" href="style/main.css">
 
     <title>HORRORFLIX</title>
 </head>
@@ -22,9 +29,9 @@
             <h2 class="logo">HORRORFLIX</h2>
             <nav>
                 <a href='#'>Iniciar</a>
-                <a href='#'>Séries</a>
-                <a href='#'>Filmes</a>
-                <a href='#'>Documentários</a>
+                <a href='#series'>Séries</a>
+                <a href='#filmes'>Filmes</a>
+                <a href='#documentarios'>Documentários</a>
             </nav>
         </div>
     </header>
@@ -37,7 +44,7 @@
                     desaparece e um complexo mistério envolvendo três gerações começa a se revelar.Assista agora a nova
                     temporada de Dark que esta imperdivel</p>
                 <div class="botoes">
-                    <button role="button" class="botao">
+                    <button role="button" class="botao" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="changeVideo('rrwycJ08PSA')">
                         <i class="fas fa-play"></i>
                         ASSISTIR AGORA
                     </button>
@@ -50,10 +57,10 @@
             </div>
     </main>
 
-  
 
+<section id="series">
     <div class="container-carrossel">
-        <h2>Series</h2>
+        <h2 id>Series</h2>
         <div class="owl-carousel owl-theme">
             <div class="item">
                 <img class="box-filme" src="img/capa-serie1.jpg" alt="" srcset="">
@@ -94,8 +101,9 @@
         </div>
 
     </div>
+</section>
 
-
+<section id='filmes'>
     <div class="container-carrossel">
         <h2>Filmes</h2>
         <div class="owl-carousel owl-theme">
@@ -125,9 +133,10 @@
 
         </div>
 
-    </div>     
-      
-    
+    </div>
+</section>
+
+<section id="documentarios">
     <div class="container-carrossel">
         <h2>Documentários</h2>
         <div class="owl-carousel owl-theme">
@@ -157,7 +166,43 @@
 
         </div>
 
-    </div>  
+    </div>
+</section>    
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered w-75">
+            <div class="modal-content">
+                <!-- <div class="modal-header"> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- </div> -->
+                <div id='player-modal'></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var myModalEl = document.getElementById("exampleModal");
+        
+        // será executado quando o modal ABRIR
+        myModalEl.addEventListener("show.bs.modal", function (event) {
+          console.log("Abriu o modal");
+        });
+        
+        // será executado quando o modal FECHAR
+        myModalEl.addEventListener("hidden.bs.modal", function (event) {
+          console.log("Fechou o modal");
+          stopVideo(); // Parar o vídeo
+        });
+      </script>
+  
+      <script src="js/youtube_api.js"></script>
+  
+
+
+
+    <footer>Desenvolvido por Emilia Menezes</footer>
 
 
 

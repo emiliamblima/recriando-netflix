@@ -13,7 +13,7 @@
 /*elementos base*/
 
 body{
-    background: var(--preta);
+    background-color: var(--preta);
     font-family: 'Arial', Times, serif;
     color: white;
 
@@ -43,6 +43,12 @@ header nav a{
 
 header nav a:hover{
     color: #fff;
+}
+
+footer{
+
+    margin-top: 30px;
+    padding: 15px;
 }
 
 /* Filme Principal*/
@@ -115,8 +121,10 @@ header nav a:hover{
     .container-carrossel{
         margin-top: 10px;
         margin-left: 20px;  
+        margin-right: 10px;
       
     }
+    
 
     
 
